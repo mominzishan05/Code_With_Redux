@@ -20,8 +20,9 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>I am Home Page</h1>
-      <h2>Here are the User Products...</h2>
+      <br />
+      <br />
+    
       
       <div className="cards-container">
         {data.map((value, index) => (
