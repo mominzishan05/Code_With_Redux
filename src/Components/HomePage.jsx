@@ -22,6 +22,7 @@ const HomePage = () => {
   return (
     <>
       <h1>I am Home Page </h1>
+      <h2>Here is the User-Products.....</h2>
       <div>
         {
             data.map((value,index)=>(
