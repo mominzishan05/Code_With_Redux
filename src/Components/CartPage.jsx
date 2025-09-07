@@ -10,7 +10,7 @@ const CartPage = () => {
 
   return (
     <>
-    <h1>User Product ......</h1>
+   
    {showdata.length === 0 ? (
   <p>No Items Selecteed .....</p>
 ) : (
