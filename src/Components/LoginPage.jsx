@@ -31,6 +31,8 @@ const login = async () => {
       <input type="password" onChange={(event)=>setPass(event.target.value)} value={pass}  />
       <br /><br />
       <button onClick={login}>Login</button>
+      <h2>User Name : emilys</h2>
+      <h2>User Password : emilyspass</h2>
     </>
   );
 };

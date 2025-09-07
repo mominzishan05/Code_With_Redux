@@ -10,6 +10,8 @@ import LoginPage from "./Components/LoginPage";
 import { Provider } from "react-redux";
 import { store } from "./App/store";
 import ProtectRoute from "./Routers/ProtectRoute";
+import AboutPage from "./Components/AboutPage";
+import ContactPage from "./Components/ContactPage";
 
 function App() {
   
@@ -25,6 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={ isAuth ? <HomePage /> : <Navigate to="/login" /> } />
           <Route path="/cart" element={ isAuth ? <CartPage /> : <Navigate to="/login" /> } />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact"  element={<ContactPage />}/> 
           <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
         </Routes>
       </BrowserRouter>

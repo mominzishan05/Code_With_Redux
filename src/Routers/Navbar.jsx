@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Css/Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -10,18 +10,19 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">MyCompany</div>
+      <div className="logo">ShopWithMe</div>
+
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/cart" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
+        <NavLink to="/cart" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>
           Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-        </Link>
-        <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
+        </NavLink>
+        <NavLink to="/about" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>About</NavLink>
+        <NavLink to="/contact" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>Contact</NavLink>
+        <NavLink to="/login" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>Login</NavLink>
       </div>
-      <div
-        className={`hamburger ${menuOpen ? "active" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+
+      <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>
         <span></span>
