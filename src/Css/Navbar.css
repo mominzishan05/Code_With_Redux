@@ -1,17 +1,64 @@
+/* Navbar main box */
 .nav-box {
-  border: 2px solid ;
-  border-radius: 15px;
+  width: 100%;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
   position: sticky;
-  top: 5px;
-  background-color: lightblue;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 10px 0;
 }
+
+/* links container */
 .nav-box ul {
   display: flex;
   justify-content: center;
   gap: 50px;
-  list-style-type: none;
-  font-size: 25px ;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav-box  a{
-    text-decoration: none;
+
+/* individual links */
+.nav-box a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
+
+.nav-box a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffd166;
+}
+
+/* responsive for mobile */
+@media (max-width: 768px) {
+  .nav-box ul {
+    flex-direction: column;
+    gap: 15px;
+    background: #0077b6;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    display: none;
+  }
+
+  .nav-box ul.open {
+    display: flex;
+  }
+
+  .nav-box a {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+/* optional: add simple hamburger if needed */
