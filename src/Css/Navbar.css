@@ -1,64 +1,105 @@
-/* Navbar main box */
-.nav-box {
-  width: 100%;
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
   background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-radius: 0 0 15px 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  padding: 10px 0;
 }
 
-/* links container */
-.nav-box ul {
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Links container */
+.nav-links {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 30px;
+  align-items: center;
 }
 
-/* individual links */
-.nav-box a {
-  text-decoration: none;
+.nav-links a {
   color: white;
-  font-size: 20px;
+  text-decoration: none;
+  font-size: 18px;
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 8px;
+  position: relative;
   transition: 0.3s;
 }
 
-.nav-box a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.nav-links a:hover {
   color: #ffd166;
 }
 
-/* responsive for mobile */
+/* Cart count bubble */
+.cart-count {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .nav-box ul {
-    flex-direction: column;
-    gap: 15px;
-    background: #0077b6;
+  .nav-links {
     position: absolute;
     top: 60px;
     right: 0;
+    background: #0077b6;
+    flex-direction: column;
     width: 200px;
     padding: 20px;
     border-radius: 0 0 15px 15px;
     display: none;
   }
 
-  .nav-box ul.open {
+  .nav-links.open {
     display: flex;
   }
 
-  .nav-box a {
+  .nav-links a {
     font-size: 18px;
+    padding: 10px 0;
     text-align: center;
   }
-}
 
-/* optional: add simple hamburger if needed */
+  .hamburger {
+    display: flex;
+  }
+}
