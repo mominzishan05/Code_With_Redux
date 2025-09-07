@@ -29,6 +29,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </Provider>
+    <h2>Show how to Use Navbar</h2>
     </>
   );
 }
