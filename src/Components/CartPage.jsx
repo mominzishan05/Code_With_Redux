@@ -9,7 +9,7 @@ const CartPage = () => {
 
   return (
     <>
-      <h1>My Cart</h1>
+      <h1>Your Orders</h1>
 
       {showdata.length === 0 ? (
         <div className="empty-cart">

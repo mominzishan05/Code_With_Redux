@@ -13,7 +13,8 @@ const Navbar = () => {
       <div className="logo">ShopWithMe</div>
 
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
+        <NavLink to="/info">Home</NavLink>
+        <NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>Shop</NavLink>
         <NavLink to="/cart" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active-link" : ""}>
           Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
         </NavLink>

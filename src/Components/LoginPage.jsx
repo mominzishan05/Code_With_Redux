@@ -18,12 +18,13 @@ const login = async () => {
       (res) => res.username === name && res.password === pass
     );
 
-    user && (setIsAuth(true), navigate("/"));
+    user && (setIsAuth(true), navigate("/info"));
   };
 
 
    return (
     <>
+     <div className="login-container">
       <label htmlFor="">Enter user name : </label>
       <input type="text" onChange={(event)=>setName(event.target.value)}value={name} placeholder="Enter UserName ..." />
       <br /><br />
@@ -33,6 +34,7 @@ const login = async () => {
       <button onClick={login}>Login</button>
       <h2>User Name : emilys</h2>
       <h2>User Password : emilyspass</h2>
+     </div>
     </>
   );
 };

@@ -12,6 +12,7 @@ import { store } from "./App/store";
 import ProtectRoute from "./Routers/ProtectRoute";
 import AboutPage from "./Components/AboutPage";
 import ContactPage from "./Components/ContactPage";
+import InfoPage from "./Components/InfoPage";
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
         <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route path="/info" element={<InfoPage />} />
           <Route path="/" element={ isAuth ? <HomePage /> : <Navigate to="/login" /> } />
           <Route path="/cart" element={ isAuth ? <CartPage /> : <Navigate to="/login" /> } />
           <Route path="/about" element={<AboutPage />} />
